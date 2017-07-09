@@ -1,4 +1,4 @@
--# in app/views/movies/same_director.html.haml
+-# in app/views/movies/director.html.haml
 
 %h2 Details about #{@movie.title}
 
@@ -30,7 +30,7 @@
       %th More Info
   %tbody
     - @movies.each do |movie|
-    - if move.director == @movie.director
+    - if movie.director == @movie.director
       %tr
         %td= movie.title 
         %td= movie.rating
