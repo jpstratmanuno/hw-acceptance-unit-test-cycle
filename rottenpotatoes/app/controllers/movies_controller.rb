@@ -61,7 +61,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
   
-  def finddirector
+  def search
     @samedirector = Movie.samedirector(params[:title])
     if @samedirector.nil?
       redirect_to root_url
