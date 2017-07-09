@@ -10,10 +10,10 @@ class MoviesController < ApplicationController
     # will render app/views/movies/show.<extension> by default
   end
   
-  def director
+  def find_director
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
-    #redirect_to movie_director(@movie)
+    redirect_to movie_director(@movie)
   end
 
   def index
