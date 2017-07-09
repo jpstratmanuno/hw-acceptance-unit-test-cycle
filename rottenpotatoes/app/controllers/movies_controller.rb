@@ -63,7 +63,6 @@ class MoviesController < ApplicationController
   
   def finddirector
     @movie = Movie.find(params[:id]) # look up movie by unique ID
-    redirect ('/movies/finddirector.html.haml')
   end
 
 end
