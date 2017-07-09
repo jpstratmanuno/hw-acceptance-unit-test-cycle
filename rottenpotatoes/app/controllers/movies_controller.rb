@@ -62,8 +62,10 @@ class MoviesController < ApplicationController
   end
   
   def finddirector
-    @movie = Movie.find(params[:id]) # look up movie by unique ID
-    redirect_to finddirector_movie_path(@movie)
+    @samedirector = Movie.samedirector(params[:title])
+    if @samedirector.nil?
+      redirect_to root_url
+    end
+    @movie = Movie.find_by(title: params[:title])
   end
-
 end
